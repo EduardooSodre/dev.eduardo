@@ -6,7 +6,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
-import { ProfileForm } from "./components/ui/button/form";
+import { ProfileForm } from "./components/ui/form";
 
 const Home = () => {
   return (
