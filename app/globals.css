@@ -70,6 +70,14 @@ body {
   }
 }
 
+.container img {
+  width: 40%;
+  height: auto;
+  border-radius: 10px;
+  border: 2px solid rgb(255, 255, 255, 0.5);
+  transition: 2s;
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -88,5 +96,36 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  @layer base {
+    body {
+    }
+  }
+}
+@media screen and (min-width: 768px) {
+  @layer base {
+    body {
+    }
+  }
+}
+@media screen and (min-width: 1024px) {
+  @layer base {
+    body {
+    }
+  }
+}
+@media screen and (min-width: 1280px) {
+  @layer base {
+    body {
+    }
+  }
+}
+@media screen and (min-width: 1536px) {
+  @layer base {
+    body {
+    }
   }
 }

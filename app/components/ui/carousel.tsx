@@ -1,30 +1,58 @@
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import { Card, CardContent } from "@/components/ui/card";
+/* eslint-disable @next/next/no-img-element */
+import React, { useState, useRef, useEffect } from "react";
 
-export function CarouselSpacing() {
+const ImageGallery: React.FC = () => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const imageGalleryRef = useRef<HTMLDivElement>(null);
+
+  const handleClick = (imageSrc: string) => {
+    setSelectedImage(imageSrc);
+  };
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      imageGalleryRef.current &&
+      !imageGalleryRef.current.contains(event.target as Node)
+    ) {
+      setSelectedImage(null);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <Carousel className="w-full max-w-sm">
-      <CarouselContent className="-ml-1">
-        {Array.from({ length: 5 }).map((_, index) => (
-          <CarouselItem key={index} className="pl-1 md:basis-1/2 lg:basis-1/3">
-            <div className="p-1">
-              <Card>
-                <CardContent className="flex aspect-square items-center justify-center p-6">
-                  <span className="text-2xl font-semibold">{index + 1}</span>
-                </CardContent>
-              </Card>
-            </div>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
-    </Carousel>
+    <div
+      className=" container flex justify-center w-full h-auto flex-wrap-reverse gap-6"
+      ref={imageGalleryRef}>
+      {[
+        "/AluraBooks.png",
+        "/Capputeeno.png",
+        "/Combo+Alura.png",
+        "/Taskhub.png",
+        "/A-Vision.png",
+        "/FinanceFlow.png",
+      ].map((src) => (
+        <img
+          key={src}
+          src={src}
+          alt={`imagem da ${src.replace(/[/.]/g, "")}`}
+          onClick={() => handleClick(src)}
+          style={{
+            width: selectedImage === src ? "100%" : "48%",
+            display:
+              selectedImage === null || selectedImage === src
+                ? "block"
+                : "none",
+          }}
+        />
+      ))}
+    </div>
   );
-}
+};
+
+export default ImageGallery;

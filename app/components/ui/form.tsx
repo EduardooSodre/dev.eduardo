@@ -1,61 +1,107 @@
-"use client";
-
+import React from "react";
+import * as Form from "@radix-ui/react-form";
 import { Button } from "@/components/ui/button";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
 
-const formSchema = z.object({
-  username: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
-  }),
-});
+const Forms = () => (
+  <Form.Root className="w-[50%] mx-auto ">
+    <Form.Field className="mb-2 grid" name="Name">
+      <div className="flex items-baseline justify-between ">
+        <Form.Label className="text-[15px] font-medium leading-[35px] text-white ">
+          Name
+        </Form.Label>
+        <Form.Message
+          className="text-[13px] text-white opacity-80"
+          match="valueMissing">
+          Please enter your name
+        </Form.Message>
+        <Form.Message
+          className="text-[13px] text-white opacity-80 "
+          match="typeMismatch">
+          Please provide a valid number
+        </Form.Message>
+      </div>
+      <Form.Control asChild className="bg-secondary-foreground border-none">
+        <input
+          className=" inline-flex h-[40px] w-full  rounded px-2.5 outline-none focus:shadow-[0_0_0_2px_black]"
+          required
+        />
+      </Form.Control>
+    </Form.Field>
 
-export function ProfileForm() {
-  // 1. Define your form.
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      username: "",
-    },
-  });
+    <Form.Field className="mb-2 grid" name="email">
+      <div className="flex items-baseline justify-between">
+        <Form.Label className="text-[15px] font-medium leading-[35px] text-white">
+          Email
+        </Form.Label>
+        <Form.Message
+          className="text-[13px] text-white opacity-80"
+          match="valueMissing">
+          Please enter your email
+        </Form.Message>
+        <Form.Message
+          className="text-[13px] text-white opacity-80"
+          match="typeMismatch">
+          Please provide a valid email
+        </Form.Message>
+      </div>
+      <Form.Control asChild className="bg-secondary-foreground border-none">
+        <input
+          className=" inline-flex h-[40px] w-full  rounded px-2.5 outline-none focus:shadow-[0_0_0_2px_black]"
+          type="email"
+          required
+        />
+      </Form.Control>
+    </Form.Field>
 
-  // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
-  }
+    <Form.Field className="mb-2 grid" name="phone">
+      <div className="flex items-baseline justify-between">
+        <Form.Label className="text-[15px] font-medium leading-[35px] text-white">
+          Phone Number
+        </Form.Label>
+        <Form.Message
+          className="text-[13px] text-white opacity-80"
+          match="valueMissing">
+          Please enter your number
+        </Form.Message>
+        <Form.Message
+          className="text-[13px] text-white opacity-80"
+          match="typeMismatch">
+          Please provide a valid number
+        </Form.Message>
+      </div>
+      <Form.Control asChild className="bg-secondary-foreground border-none">
+        <input
+          className=" inline-flex h-[40px] w-full  rounded px-2.5 outline-none focus:shadow-[0_0_0_2px_black]"
+          type="email"
+          required
+        />
+      </Form.Control>
+    </Form.Field>
 
-  return (
-    <>
-      <label
-        id="name"
-        className="block mb-2 text-sm font-medium  dark:text-white">
-        Your Name
-      </label>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="mb-4">
-        <input {...form.register("username")} placeholder="Username" />
-      </form>
-
-      <label
-        id="name"
-        className="block mb-2 text-sm font-medium  dark:text-white">
-        Your message
-      </label>
-      <textarea
-        id="message"
-        rows={4}
-        className="block p-2.5 w-full text-sm  bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-        placeholder="Write your thoughts here..."></textarea>
-      <Button className="mt-10 bg-green-400  hover:bg-white hover:text-green-400">
-        <a
-          href="https://wa.me/18996198597"
-          target="_blank"
-          rel="noopener noreferrer">
-          Send
-        </a>
+    <Form.Field className="mb-2 grid" name="question">
+      <div className="flex items-baseline justify-between">
+        <Form.Label className="text-[15px] font-medium leading-[35px] text-white">
+          Question
+        </Form.Label>
+        <Form.Message
+          className="text-[13px] text-white opacity-80"
+          match="valueMissing">
+          Please enter a question
+        </Form.Message>
+      </div>
+      <Form.Control asChild className="bg-secondary-foreground border-none">
+        <textarea
+          className=" inline-flex h-[40px] w-full  rounded px-2.5 outline-none focus:shadow-[0_0_0_2px_black]"
+          required
+        />
+      </Form.Control>
+    </Form.Field>
+    <Form.Submit asChild>
+      <Button className="mt-10 w-full items-center justify-center bg-green-400 shadow-[0_2px_10px] hover:bg-white hover:text-green-400">
+        Post question
       </Button>
-    </>
-  );
-}
+    </Form.Submit>
+  </Form.Root>
+);
+
+export default Forms;
