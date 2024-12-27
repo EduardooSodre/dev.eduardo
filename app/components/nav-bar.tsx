@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ButtonHireMe } from "./ui/button";
 const Navbar = () => {
   return (
-    <nav className="flex w-full justify-between px-40 py-4 text-primary-foreground ">
+    <nav className="nav flex w-full justify-between px-40 py-4 text-primary-foreground ">
       <div className="flex gap-10 opacity-80">
         <Link href="/" className={"text-lg"}>
           Home
