@@ -21,7 +21,7 @@ export { ButtonHome };
 const ButtonHireMe = () => {
   return (
     <div>
-      <Button className="px-8 bg-green-400 hover:bg-white hover:text-green-400">
+      <Button className="button-nav px-8 bg-green-400 hover:bg-white hover:text-green-400">
         <a
           href="https://wa.me/18996198597"
           target="_blank"

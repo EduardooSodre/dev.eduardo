@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const CardsServices = () => {
   return (
-    <div className="flex-wrap mt-10 justify-between px-40 flex text-justify">
+    <div className="flex-wrap w-full mt-10 justify-between px-40 flex text-justify">
       <div className="mb-8  max-w-xs p-6 bg-secondary-foreground rounded-lg flex flex-col items-center">
         <Image
           src="/react.svg"
