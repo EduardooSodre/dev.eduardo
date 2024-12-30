@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <section className="flex px-40 py-10 ">
+      <section className="home w-full flex px-40 py-10 ">
         <div className="w-1/2 py-10">
           <p className="text-primary-foreground opacity-50">Hi I am</p>
           <p className="text-2xl font-bold text-secondary opacity-80">
@@ -21,7 +21,6 @@ const Home = () => {
             Full Stack Developer
           </h1>
           <SocialMedia />
-
           <ButtonHome />
         </div>
         <div className="w-1/2 ">

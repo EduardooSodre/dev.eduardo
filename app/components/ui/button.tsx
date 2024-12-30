@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 const ButtonHome = () => {
   return (
     <div>
-      <Button className="mt-10 bg-green-400 hover:bg-white hover:text-green-400">
+      <Button className="buttonhome mt-10 bg-green-400 hover:bg-white hover:text-green-400">
         <a
           href="https://wa.me/18996198597"
           target="_blank"
@@ -11,7 +11,7 @@ const ButtonHome = () => {
           Hire Me
         </a>
       </Button>
-      <Button className="mx-5">Download CV</Button>
+      <Button className="buttonhome mx-5">Download CV</Button>
     </div>
   );
 };
