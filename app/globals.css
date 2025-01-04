@@ -114,6 +114,31 @@ body {
     margin-right: 0%;
     margin-bottom: 0.5rem;
   }
+  .perfil {
+    display: none;
+  }
+  .home,
+  .social,
+  p,
+  h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .services {
+    margin-left: 0%;
+    margin-right: 0%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .services {
+    margin-left: 0%;
+    margin-right: 0%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
 }
 
 @media (max-width: 795px) {

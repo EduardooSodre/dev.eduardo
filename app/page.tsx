@@ -12,7 +12,7 @@ const Home = () => {
     <>
       <Navbar />
       <section className="home w-full flex px-40 py-10 ">
-        <div className="w-1/2 py-10">
+        <div className="w-full py-10">
           <p className="text-primary-foreground opacity-50">Hi I am</p>
           <p className="text-2xl font-bold text-secondary opacity-80">
             Eduardo Sodré
@@ -20,25 +20,31 @@ const Home = () => {
           <h1 className="text-4xl mt-2 text-green-400 font-bold">
             Full Stack Developer
           </h1>
-          <SocialMedia />
+          <div className=" social">
+            <SocialMedia />
+          </div>
           <ButtonHome />
         </div>
-        <div className="w-1/2 ">
+        <div className="w-1/2 perfil ">
           <img
-            className="w-auto h-auto border-none backdrop-none"
+            className=" border-none "
             src="/perfil.png"
             alt="photo perfil Eduardo"
           />
         </div>
       </section>
-      <section id="Services" className="flex flex-col items-center py-10 ">
-        <h2 className="text-4xl font-bold">Services</h2>
-        <p className="text-lg opacity-60 mt-2 mb-10">
+
+      <section
+        id="Services"
+        className="services flex flex-col items-center py-10 justify-center w-full ">
+        <h2 className="services text-4xl font-bold ">Services</h2>
+        <p className="services w-full flex justify-center items-center text-lg opacity-60 mt-2 mb-10 text-justify">
           Web development combines design, speed, and functionality to create
           exceptional experiences.
         </p>
         <CardsServices />
       </section>
+
       <section
         id="About-me"
         className=" px-40 flex flex-col items-center py-10 ">

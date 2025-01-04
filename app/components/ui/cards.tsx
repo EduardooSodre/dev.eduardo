@@ -2,8 +2,8 @@ import Image from "next/image";
 
 const CardsServices = () => {
   return (
-    <div className="flex-wrap w-full mt-10 justify-between px-40 flex text-justify">
-      <div className="mb-8  max-w-xs p-6 bg-secondary-foreground rounded-lg flex flex-col items-center">
+    <div className="flex-wrap w-full mt-10 justify-center flex text-justify gap-10 ">
+      <div className="max-w-xs p-6 bg-secondary-foreground rounded-lg flex flex-col items-center">
         <Image
           src="/react.svg"
           alt="logo react"
@@ -14,12 +14,12 @@ const CardsServices = () => {
         <p className="mb-2 text-2xl font-semibold text-green-400">
           Need a help in Claim?
         </p>
-        <p className="mb-3 font-normal text-gray-500 dark:text-gray-400">
+        <p className="mb-3 text-lg text-gray-500 dark:text-gray-400">
           Go to this step by step guideline process on how to certify for your
           weekly benefits:
         </p>
       </div>
-      <div className=" mb-8 max-w-xs p-6 bg-secondary-foreground rounded-lg flex flex-col items-center">
+      <div className=" max-w-xs p-6 bg-secondary-foreground rounded-lg flex flex-col items-center">
         <Image
           src="/react.svg"
           alt="logo react"
@@ -30,12 +30,12 @@ const CardsServices = () => {
         <p className="mb-2 text-2xl font-semibold text-green-400">
           Need a help in Claim?
         </p>
-        <p className="mb-3 font-normal text-gray-500 dark:text-gray-400">
+        <p className="mb-3 text-lg text-gray-500 dark:text-gray-400">
           Go to this step by step guideline process on how to certify for your
           weekly benefits:
         </p>
       </div>
-      <div className=" mb-8 max-w-xs p-6 bg-secondary-foreground rounded-lg flex flex-col items-center">
+      <div className="  max-w-xs p-6 bg-secondary-foreground rounded-lg flex flex-col items-center">
         <Image
           src="/react.svg"
           alt="logo react"
@@ -46,12 +46,12 @@ const CardsServices = () => {
         <p className="mb-2 text-2xl font-semibold text-green-400">
           Need a help in Claim?
         </p>
-        <p className="mb-3 font-normal text-gray-500 dark:text-gray-400">
+        <p className="mb-3 text-lg text-gray-500 dark:text-gray-400">
           Go to this step by step guideline process on how to certify for your
           weekly benefits:
         </p>
       </div>
-      <div className=" mb-8 max-w-xs p-6 bg-secondary-foreground rounded-lg flex flex-col items-center">
+      <div className="  max-w-xs p-6 bg-secondary-foreground rounded-lg flex flex-col items-center">
         <Image
           src="/react.svg"
           alt="logo react"
@@ -62,12 +62,12 @@ const CardsServices = () => {
         <p className="mb-2 text-2xl font-semibold text-green-400">
           Need a help in Claim?
         </p>
-        <p className="mb-3 font-normal text-gray-500 dark:text-gray-400">
+        <p className="mb-3 text-lg text-gray-500 dark:text-gray-400">
           Go to this step by step guideline process on how to certify for your
           weekly benefits:
         </p>
       </div>
-      <div className="mb-8 max-w-xs p-6 bg-secondary-foreground rounded-lg flex flex-col items-center">
+      <div className=" max-w-xs p-6 bg-secondary-foreground rounded-lg flex flex-col items-center">
         <Image
           src="/react.svg"
           alt="logo react"
@@ -78,12 +78,12 @@ const CardsServices = () => {
         <p className="mb-2 text-2xl font-semibold text-green-400">
           Need a help in Claim?
         </p>
-        <p className="mb-3 font-normal text-gray-500 dark:text-gray-400">
+        <p className="mb-3 text-lg text-gray-500 dark:text-gray-400">
           Go to this step by step guideline process on how to certify for your
           weekly benefits:
         </p>
       </div>
-      <div className="mb-8 max-w-xs p-6 bg-secondary-foreground rounded-lg flex flex-col items-center">
+      <div className=" max-w-xs p-6 bg-secondary-foreground rounded-lg flex flex-col items-center">
         <Image
           src="/react.svg"
           alt="logo react"
@@ -94,7 +94,7 @@ const CardsServices = () => {
         <p className="mb-2 text-2xl font-semibold text-green-400">
           Need a help in Claim?
         </p>
-        <p className="mb-3 font-normal text-gray-500 dark:text-gray-400">
+        <p className="mb-3 text-lg text-gray-500 dark:text-gray-400">
           Go to this step by step guideline process on how to certify for your
           weekly benefits:
         </p>
