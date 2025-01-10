@@ -33,8 +33,8 @@ const Forms = () => {
   };
 
   return (
-    <Form.Root className="w-[50%] mx-auto " onSubmit={handleSubmit}>
-      <Form.Field className="mb-2 grid" name="Name">
+    <Form.Root className="w-[100%] mx-auto " onSubmit={handleSubmit}>
+      <Form.Field className="mb-2  grid" name="Name">
         <div className="flex items-baseline justify-between ">
           <Form.Label className="text-[15px] font-medium leading-[35px] text-white ">
             Name

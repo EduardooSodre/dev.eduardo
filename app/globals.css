@@ -71,7 +71,7 @@ body {
 }
 
 .container img {
-  width: 40%;
+  width: 100%;
   height: auto;
   border-radius: 0.25rem;
   border: 2px solid rgb(255, 255, 255, 0.5);
@@ -133,11 +133,47 @@ body {
     padding-right: 5%;
   }
 
-  .services {
-    margin-left: 0%;
-    margin-right: 0%;
-    padding-left: 5%;
-    padding-right: 5%;
+  .services p {
+    padding: 0%;
+    text-align: center;
+    font-size: 15px;
+  }
+
+  .about-me,
+  .text {
+    width: 100%;
+    padding: 5%;
+    margin: 0%;
+  }
+  .about-me p {
+    display: flex;
+    font-size: 15px;
+  }
+
+  .about-me h2 {
+    text-align: center;
+  }
+  .div {
+    width: 100%;
+  }
+
+  .imagem {
+    display: none;
+  }
+
+  #Forms {
+    margin: 0%;
+    padding: 0;
+  }
+  .contact-me {
+    width: 100%;
+    padding: 5%;
+    margin: 0%;
+  }
+
+  .contact-me p {
+    display: flex;
+    font-size: 15px;
   }
 }
 
@@ -157,6 +193,11 @@ body {
   .button-nav {
     display: none;
   }
+  .portfolio {
+    width: 100%;
+    padding: 0%;
+    margin: 0%;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -172,8 +213,9 @@ body {
   }
 }
 
-@media (max-width: 1280px) {
-}
-
-@media (max-width: 1536px) {
+@media (max-width: 920px) {
+  .portfolio {
+    width: 100%;
+    padding: 10%;
+  }
 }
