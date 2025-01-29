@@ -21,11 +21,11 @@ const CardsServices = () => {
       </div>
       <div className=" max-w-xs p-6 bg-secondary-foreground rounded-lg flex flex-col items-center">
         <Image
-          src="/react.svg"
-          alt="logo react"
+          src="/nextjs.svg"
+          alt="logo next"
           width={40}
           height={40}
-          className="w-10 h-10 mx-auto"
+          className="w-10 h-10 mx-auto fill-white"
         />
         <p className="mb-2 text-2xl font-semibold text-green-400">
           Need a help in Claim?

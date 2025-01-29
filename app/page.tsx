@@ -62,18 +62,17 @@ const Home = () => {
           </div>
           <div className="text ps-24 w-1/2 mt-40">
             <p className=" text-lg opacity-70 mb-10 text-justify ">
-              Sou apaixonado por transformar ideias em realidades impactantes
-              que realmente conectam as pessoas. Com uma mistura de
-              criatividade, dedicação e um toque pessoal, me esforço para trazer
-              à tona o que há de melhor em cada projeto que assumo. Meu foco é
-              criar soluções que não apenas parecem bons, mas fazem uma
-              diferença real, criando experiências significativas que deixam uma
-              impressão duradoura. Cada detalhe é importante para mim, desde o
-              primeiro conceito até o produto final, garantindo que o trabalho
-              reflita não apenas qualidade, mas também coração. que grandes
-              projetos e soluções são construídos com base na colaboração,
-              compreensão e um desejo genuíno de inspirar. Vamos criar algo
-              extraordinário juntos.
+              I am passionate about transforming ideas into impactful realities
+              that truly connect people. With a blend of creativity, dedication,
+              and a personal touch, I strive to bring out the best in every
+              project I take on. My focus is on creating solutions that not only
+              look great but also make a real difference, crafting meaningful
+              experiences that leave a lasting impression. Every detail matters
+              to me, from the initial concept to the final product, ensuring
+              that the work reflects not just quality but also heart. Great
+              projects and solutions are built on collaboration, understanding,
+              and a genuine desire to inspire. Let’s create something
+              extraordinary together.
             </p>
             <ButtonHireMe />
           </div>
