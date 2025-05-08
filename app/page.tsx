@@ -1,6 +1,6 @@
 "use client";
 
-import Navbar from "./components/Nav-bar";
+import Navbar from "./components/nav-bar";
 import Forms from "./components/ui/form";
 import { ButtonHome } from "./components/ui/button";
 import SocialMedia from "./components/ui/icons-links-social";
