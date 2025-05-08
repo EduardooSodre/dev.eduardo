@@ -35,7 +35,7 @@ const projects = [
     description: "Login responsivo com validação Zod, integração com API e feedback visual.",
     tech: [<SiReact key="react" />, <SiTailwindcss key="tailwind" />],
     link: "#",
-    image: "/Taskhub.png",
+    image: "/TaskHub.png",
   },
   {
     title: "Tela de Login com Validação",
