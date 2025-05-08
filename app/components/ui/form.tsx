@@ -1,127 +1,101 @@
-import React from "react";
-import * as Form from "@radix-ui/react-form";
-import { Button } from "@/components/ui/button";
+import { useState } from 'react';
 
-const Forms = () => {
-  interface FormDataValues {
-    Name: string | null;
-    email: string | null;
-    phone: string | null;
-    question: string | null;
-  }
+export default function Portfolio() {
+  const [form, setForm] = useState({ nome: '', email: '', telefone: '', assunto: '' });
+  const [erro, setErro] = useState('');
+  const [sucesso, setSucesso] = useState(false);
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
-    event.preventDefault(); // Evita o comportamento padrão do formulário
-
-    const formData = new FormData(event.currentTarget);
-    const values: FormDataValues = {
-      Name: formData.get("Name") as string | null,
-      email: formData.get("email") as string | null,
-      phone: formData.get("phone") as string | null,
-      question: formData.get("question") as string | null,
-    };
-
-    // Cria o link mailto
-    const mailtoLink = `mailto:edduardooo2011@hotmail.com?subject=New Question&body=
-  Name: ${encodeURIComponent(values.Name || "")}
-  Email: ${encodeURIComponent(values.email || "")}
-  Phone: ${encodeURIComponent(values.phone || "")}
-  Question: ${encodeURIComponent(values.question || "")}`;
-
-    // Abre o cliente de email
-    window.location.href = mailtoLink;
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!form.nome || !form.email || !form.telefone || !form.assunto) {
+      setErro('Todos os campos são obrigatórios.');
+      return;
+    }
+    setErro('');
+    try {
+      const res = await fetch('https://formspree.io/f/xpwdreew', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          nome: form.nome,
+          email: form.email,
+          telefone: form.telefone,
+          mensagem: form.assunto,
+        }),
+      });
+
+      if (res.ok) {
+        setSucesso(true);
+        setForm({ nome: '', email: '', telefone: '', assunto: '' });
+      } else {
+        setErro('Erro ao enviar. Tente novamente mais tarde.');
+      }
+    } catch (err) {
+      console.error(err);
+      setErro('Erro ao conectar com o servidor.');
+    }
+  };
+
+
   return (
-    <Form.Root className="w-[100%] mx-auto " onSubmit={handleSubmit}>
-      <Form.Field className="mb-2  grid" name="Name">
-        <div className="flex items-baseline justify-between ">
-          <Form.Label className="text-[15px] font-medium leading-[35px] text-white ">
-            Name
-          </Form.Label>
-          <Form.Message
-            className="text-[13px] text-white opacity-80"
-            match="valueMissing">
-            Please enter your name
-          </Form.Message>
-        </div>
-        <Form.Control asChild className="bg-secondary-foreground border-none">
-          <input
-            className=" inline-flex h-[40px] w-full  rounded px-2.5 outline-none focus:shadow-[0_0_0_2px_black]"
-            required
-          />
-        </Form.Control>
-      </Form.Field>
+    <>
 
-      <Form.Field className="mb-2 grid" name="email">
-        <div className="flex items-baseline justify-between">
-          <Form.Label className="text-[15px] font-medium leading-[35px] text-white">
-            Email
-          </Form.Label>
-          <Form.Message
-            className="text-[13px] text-white opacity-80"
-            match="valueMissing">
-            Please enter your email
-          </Form.Message>
-          <Form.Message
-            className="text-[13px] text-white opacity-80"
-            match="typeMismatch">
-            Please provide a valid email
-          </Form.Message>
-        </div>
-        <Form.Control asChild className="bg-secondary-foreground border-none">
-          <input
-            className=" inline-flex h-[40px] w-full  rounded px-2.5 outline-none focus:shadow-[0_0_0_2px_black]"
-            type="email"
-            required
-          />
-        </Form.Control>
-      </Form.Field>
+      {/* Contact Section */}
+      <section id="contato" className="py-20 bg-neutral-800 rounded-lg text-white px-6 sm:px-10 lg:px-24">
+        <div className="max-w-2xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-4">Fale comigo</h2>
+          <p className="text-gray-400 mb-8">
+            Estou disponível para novos projetos e oportunidades. Preencha o formulário abaixo:
+          </p>
 
-      <Form.Field className="mb-2 grid" name="phone">
-        <div className="flex items-baseline justify-between">
-          <Form.Label className="text-[15px] font-medium leading-[35px] text-white">
-            Phone Number
-          </Form.Label>
-          <Form.Message
-            className="text-[13px] text-white opacity-80"
-            match="valueMissing">
-            Please enter your number
-          </Form.Message>
+          <form onSubmit={handleSubmit} className="space-y-4 text-left">
+            <input
+              type="text"
+              name="nome"
+              placeholder="Seu nome"
+              onChange={handleChange}
+              className="w-full px-4 py-2 rounded bg-neutral-900 border border-gray-700 text-white"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Seu e-mail"
+              onChange={handleChange}
+              className="w-full px-4 py-2 rounded bg-neutral-900 border border-gray-700 text-white"
+            />
+            <input
+              type="text"
+              name="telefone"
+              placeholder="Seu telefone"
+              onChange={handleChange}
+              className="w-full px-4 py-2 rounded bg-neutral-900 border border-gray-700 text-white"
+            />
+            <textarea
+              name="assunto"
+              placeholder="Digite sua mensagem"
+              onChange={handleChange}
+              rows={4}
+              className="w-full px-4 py-2 rounded bg-neutral-900 border border-gray-700 text-white"
+            />
+            {erro && <p className="text-red-500 text-sm">{erro}</p>}
+            {sucesso && <p className="text-green-500 text-sm">Mensagem enviada com sucesso!</p>}
+            <button
+              type="submit"
+              className="w-full bg-green-500 hover:bg-green-600 text-white py-2 rounded font-semibold"
+            >
+              Enviar mensagem
+            </button>
+          </form>
         </div>
-        <Form.Control asChild className="bg-secondary-foreground border-none">
-          <input
-            className=" inline-flex h-[40px] w-full  rounded px-2.5 outline-none focus:shadow-[0_0_0_2px_black]"
-            required
-          />
-        </Form.Control>
-      </Form.Field>
+      </section>
 
-      <Form.Field className="mb-2 grid" name="question">
-        <div className="flex items-baseline justify-between">
-          <Form.Label className="text-[15px] font-medium leading-[35px] text-white">
-            Question
-          </Form.Label>
-          <Form.Message
-            className="text-[13px] text-white opacity-80"
-            match="valueMissing">
-            Please enter a question
-          </Form.Message>
-        </div>
-        <Form.Control asChild className="bg-secondary-foreground border-none">
-          <textarea
-            className=" inline-flex h-[40px] w-full  rounded px-2.5 outline-none focus:shadow-[0_0_0_2px_black]"
-            required
-          />
-        </Form.Control>
-      </Form.Field>
-      <Form.Submit asChild>
-        <Button className="mt-10 w-full items-center justify-center bg-green-400  hover:bg-white hover:text-green-400">
-          Post question
-        </Button>
-      </Form.Submit>
-    </Form.Root>
+    </>
   );
-};
-
-export default Forms;
+}

@@ -11,7 +11,7 @@ const ButtonHome = () => {
           Hire Me
         </a>
       </Button>
-      <Button className="buttonhome mx-5">Download CV</Button>
+      <Button className="buttonhome mx-5 bg-gray-700 hover:bg-slate-500">Download CV</Button>
     </div>
   );
 };

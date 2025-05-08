@@ -15,7 +15,7 @@ body {
 
 @layer base {
   :root {
-    --background: #121212;
+    --background: #171717;
     --foreground: 0 0% 3.9%;
     --card: #1b1b1b;
     --card-foreground: 0 0% 3.9%;
@@ -43,7 +43,7 @@ body {
   }
 
   .dark {
-    --background: #121212;
+    --background: #171717;
     --foreground: 0 0% 98%;
     --card: #1b1b1b;
     --card-foreground: #1b1b1b;
@@ -107,23 +107,6 @@ body {
     font-size: 12px;
     width: 100%;
     text-rendering: auto;
-  }
-  .buttonhome {
-    width: 100%;
-    margin-left: 0%;
-    margin-right: 0%;
-    margin-bottom: 0.5rem;
-  }
-  .perfil {
-    display: none;
-  }
-  .home,
-  .social,
-  p,
-  h1 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
   .services {
@@ -197,6 +180,23 @@ body {
     width: 100%;
     padding: 0%;
     margin: 0%;
+  }
+  .perfil {
+    display: none;
+  }
+  .home,
+  .social,
+  p,
+  h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .buttonhome {
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 0%;
+    margin-bottom: 0.5rem;
   }
 }
 
