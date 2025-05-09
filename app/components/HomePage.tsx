@@ -6,7 +6,7 @@ import { ButtonHome } from './ui/button';
 
 export default function HomePage() {
     return (
-        <section className="home flex flex-col-reverse md:flex-row items-center px-6 sm:px-12 lg:px-40 py-16 bg-neutral-900 text-white">
+        <section id='Home' className="home flex flex-col-reverse md:flex-row items-center px-6 sm:px-12 lg:px-40 py-20 bg-neutral-900 text-white">
             <div data-aos="fade-down-right" className="w-full md:w-1/2">
                 <p className="text-sm text-gray-400">Olá, me chamo</p>
                 <h2 className="text-3xl sm:text-4xl font-bold text-white">Eduardo Sodré</h2>

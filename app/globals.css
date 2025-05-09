@@ -104,15 +104,6 @@ body {
 }
 
 @media (max-width: 517px) {
-  .nav a {
-    padding: 0%;
-    margin: 0%;
-    width: 100%;
-    font-size: 12px;
-    width: 100%;
-    text-rendering: auto;
-  }
-
   .services {
     margin-left: 0%;
     margin-right: 0%;
@@ -165,21 +156,11 @@ body {
 }
 
 @media (max-width: 795px) {
-  .nav {
-    width: 100%;
-    text-align: center;
-  }
-  .nav-link {
-    width: 100%;
-    gap: 20px;
-  }
   .link {
     width: 100%;
     font-size: 15px;
   }
-  .button-nav {
-    display: none;
-  }
+
   .portfolio {
     width: 100%;
     padding: 0%;
@@ -188,7 +169,7 @@ body {
   .perfil {
     display: none;
   }
-  .home,
+
   .social,
   p,
   h2,
@@ -202,19 +183,6 @@ body {
     margin-left: 0%;
     margin-right: 0%;
     margin-bottom: 0.5rem;
-  }
-}
-
-@media (max-width: 1024px) {
-  .nav {
-    width: 100%;
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-  .home {
-    width: 100%;
-    padding-left: 5%;
-    padding-right: 5%;
   }
 }
 
