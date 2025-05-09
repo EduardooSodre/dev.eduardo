@@ -53,6 +53,7 @@ export default function Services() {
         <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
           {services.map((service, index) => (
             <div
+              data-aos="flip-down"
               key={index}
               className="bg-neutral-800 p-6 rounded-lg hover:bg-neutral-700 transition duration-300"
             >

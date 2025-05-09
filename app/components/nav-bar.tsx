@@ -5,20 +5,20 @@ const Navbar = () => {
   return (
     <nav className="nav flex w-full justify-between px-40 py-4 text-primary-foreground ">
       <div className=" nav-link flex gap-10 opacity-80">
-        <Link href="/" className={"text-lg link"}>
+        <Link href="/#" className={"text-lg link"}>
           Home
         </Link>
         <Link href="#Services" className={"text-lg link"}>
-          Services
+          Serviços
         </Link>
         <Link href="#About-me" className={"text-lg link"}>
-          About me
+          Sobre mim
         </Link>
         <Link href="#Portfolio" className={"text-lg link"}>
-          Portifolio
+          Portfólio
         </Link>
         <Link href="#Contact-me" className={"text-lg link"}>
-          Contact me
+          Fale comigo
         </Link>
       </div>
       <ButtonHireMe />

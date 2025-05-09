@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Roboto", serif;
   color: white;
@@ -187,6 +191,7 @@ body {
   .home,
   .social,
   p,
+  h2,
   h1 {
     display: flex;
     align-items: center;

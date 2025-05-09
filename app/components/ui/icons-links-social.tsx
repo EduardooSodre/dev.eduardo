@@ -2,7 +2,7 @@
 const SocialMedia = () => {
   return (
     <div className="mt-10 flex space-x-4">
-      <a href="https://www.instagram.com/eduardo.sodre_" className="group">
+      <a href="https://www.instagram.com/eduardo.s.dev_" className="group">
         <div className="w-10 h-10 rounded-full border border-gray-500 flex justify-center items-center hover:bg-gray-700 transition">
           <img
             src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"

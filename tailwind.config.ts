@@ -58,6 +58,10 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
     },
+    plugins: [],
+    corePlugins: {
+      scrollBehavior: true,
+    },
   },
 };
 export default config;

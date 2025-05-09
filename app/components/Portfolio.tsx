@@ -1,7 +1,21 @@
 "use client"
 
 import { useState } from "react"
-import { SiNextdotjs, SiReact, SiTailwindcss, SiNodedotjs } from "react-icons/si"
+import {
+  SiNextdotjs,
+  SiTailwindcss,
+  SiNodedotjs,
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiSass,
+  SiAngular,
+  SiOpenai,
+  SiShadcnui,
+  SiStripe,
+  SiClerk,
+  SiGoogleauthenticator,
+} from "react-icons/si"
 import Link from "next/link"
 import Image from "next/image"
 import {
@@ -16,76 +30,78 @@ import {
 
 const projects = [
   {
-    title: "Portfólio Pessoal",
-    description:
-      "Site pessoal desenvolvido com Next.js, TailwindCSS e Framer Motion. Dark mode, SEO e deploy na Vercel.",
-    tech: [<SiNextdotjs key="next" />, <SiTailwindcss key="tailwind" />, <SiReact key="react" />],
-    link: "https://dev-eduardo-phi.vercel.app",
-    image: "/Combo+Alura.png",
+    title: "Pet Shop Dev",
+    description: "Site de petshop com design responsivo, animações.",
+    tech: [<SiNextdotjs key="next" />, <SiTailwindcss key="tailwind" />],
+    link: "https://petshop-rho-olive.vercel.app",
+    image: "/petshop.png",
   },
   {
-    title: "Dashboard Administrativo",
-    description: "Painel com autenticação, sidebar, CRUD de usuários e proteção de rotas.",
-    tech: [<SiNextdotjs key="next" />, <SiNodedotjs key="node" />, <SiTailwindcss key="tailwind" />],
-    link: "#",
-    image: "/AluraBooks.png",
+    title: "Finance Growth",
+    description: "Aplicativo de finanças pessoais com autenticação, dashboard e gráficos interativos.",
+    tech: [<SiNextdotjs key="next" />, <SiTailwindcss key="tailwind" />, <SiOpenai key="openAi" />, <SiShadcnui key="Shadcnui" />, <SiStripe key="stripe" />, <SiClerk key="clerk" />],
+    link: "https://finance-growth.vercel.app",
+    image: "/FinanceFlow.png",
   },
   {
-    title: "Tela de Login com Validação",
-    description: "Login responsivo com validação Zod, integração com API e feedback visual.",
-    tech: [<SiReact key="react" />, <SiTailwindcss key="tailwind" />],
-    link: "#",
+    title: "Task Hub",
+    description: "Meu site que permite que você anote e organize suas tarefas de forma eficiente, sejam elas públicas ou privadas.",
+    tech: [<SiNextdotjs key="next" />, <SiCss3 key="CssModules" />, <SiGoogleauthenticator key="AuthGoogle" />],
+    link: "https://task-hub-phi.vercel.app",
     image: "/TaskHub.png",
   },
   {
-    title: "Tela de Login com Validação",
-    description: "Login responsivo com validação Zod, integração com API e feedback visual.",
-    tech: [<SiReact key="react" />, <SiTailwindcss key="tailwind" />],
+    title: "A Vision",
+    description: "Site de uma empresa de tecnologia com design responsivo.",
+    tech: [<SiAngular key="angular" />, <SiCss3 key="css3" />],
     link: "#",
     image: "/A-Vision.png",
   },
   {
-    title: "Tela de Login com Validação",
-    description: "Login responsivo com validação Zod, integração com API e feedback visual.",
-    tech: [<SiReact key="react" />, <SiTailwindcss key="tailwind" />],
-    link: "#",
-    image: "/FinanceFlow.png",
+    title: "Motors Dev",
+    description: "E-commerce de veículos com CRUD de anúncios integrado a um CMS.",
+    tech: [<SiNextdotjs key="next" />, <SiSass key="sass" />],
+    link: "https://motorsdev.vercel.app",
+    image: "/motors-dev.png",
   },
   {
-    title: "Tela de Login com Validação",
-    description: "Login responsivo com validação Zod, integração com API e feedback visual.",
-    tech: [<SiReact key="react" />, <SiTailwindcss key="tailwind" />],
-    link: "#",
-    image: "/Capputeeno.png",
+    title: "Repositório Git",
+    description: "Repositório Git onde pode colocar seu repositório e ver informações sobre o Git e GitHub.",
+    tech: [<SiJavascript key="js" />],
+    link: "https://repositorio-github-mu.vercel.app",
+    image: "/repositorio-git.png",
   },
   {
-    title: "Tela de Login com Validação",
-    description: "Login responsivo com validação Zod, integração com API e feedback visual.",
-    tech: [<SiReact key="react" />, <SiTailwindcss key="tailwind" />],
-    link: "#",
-    image: "/Capputeeno.png",
+    title: "Jogo do Número Secreto",
+    description: "Jogo simples de adivinhação de número, desenvolvido com HTML, CSS e JavaScript.",
+    tech: [<SiHtml5 key="html" />, <SiCss3 key="css" />, <SiJavascript key="js" />],
+    link: "https://jogo-do-mumero-secreto.vercel.app",
+    image: "/jogo-numero-secreto.png",
   },
   {
-    title: "Tela de Login com Validação",
-    description: "Login responsivo com validação Zod, integração com API e feedback visual.",
-    tech: [<SiReact key="react" />, <SiTailwindcss key="tailwind" />],
-    link: "#",
-    image: "/Capputeeno.png",
+    title: "AluraBooks",
+    description: "Site de livros com design responsivo, animações.",
+    tech: [<SiNextdotjs key="next" />, <SiNodedotjs key="node" />, <SiTailwindcss key="tailwind" />],
+    link: "https://alurabook-three-gamma.vercel.app",
+    image: "/AluraBooks.png",
   },
   {
-    title: "Tela de Login com Validação",
-    description: "Login responsivo com validação Zod, integração com API e feedback visual.",
-    tech: [<SiReact key="react" />, <SiTailwindcss key="tailwind" />],
-    link: "#",
-    image: "/Capputeeno.png",
+    title: "Aluraplus",
+    description:
+      "Site desenvolvido no curso da Alura",
+    tech: [<SiNextdotjs key="next" />, <SiTailwindcss key="tailwind" />],
+    link: "https://dev-eduardo-phi.vercel.app",
+    image: "/Combo+Alura.png",
   },
   {
-    title: "Tela de Login com Validação",
-    description: "Login responsivo com validação Zod, integração com API e feedback visual.",
-    tech: [<SiReact key="react" />, <SiTailwindcss key="tailwind" />],
-    link: "#",
+    title: "Site loja de roupas",
+    description: "Site de loja de roupas web.",
+    tech: [<SiNextdotjs key="next" />, <SiCss3 key="css3" />],
+    link: "https://capputeeno-opal.vercel.app",
     image: "/Capputeeno.png",
   },
+
+
 ]
 
 export default function Portfolio() {
@@ -191,9 +207,12 @@ export default function Portfolio() {
           Alguns dos projetos que desenvolvi com foco em performance, usabilidade e boas práticas de código.
         </p>
 
-        <div className="grid gap-10 md:grid-cols-2 xl:grid-cols-3">
+        <div
+
+          className="grid gap-10 md:grid-cols-2 xl:grid-cols-3">
           {currentProjects.map((proj, idx) => (
             <div
+              data-aos="flip-left"
               key={idx}
               className="bg-neutral-800 rounded-lg shadow-md hover:shadow-xl transition duration-300 overflow-hidden"
             >
