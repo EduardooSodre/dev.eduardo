@@ -232,7 +232,7 @@ export default function Portfolio() {
                     <span key={i}>{icon}</span>
                   ))}
                 </div>
-                <Link href={proj.link} target="_blank" className="text-sm text-green-500 hover:underline">
+                <Link href={proj.link} target="_blank" rel="noopener noreferrer" className="text-sm text-green-500 hover:underline">
                   Ver projeto ↗
                 </Link>
               </div>
