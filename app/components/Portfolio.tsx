@@ -139,7 +139,7 @@ const projects = [
     link: "https://capputeeno-opal.vercel.app",
     image: "/Capputeeno.png",
   },
-  
+
 
 
 ]
