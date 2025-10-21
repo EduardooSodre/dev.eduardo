@@ -244,7 +244,7 @@ export default function Portfolio() {
     <section id="portfolio" ref={portfolioRef} className="py-20 bg-neutral-900 text-white px-6 sm:px-10 lg:px-24">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl sm:text-5xl font-extrabold mb-4">Portfólio — Projetos selecionados</h2>
+          <h2 className="text-4xl sm:text-5xl font-extrabold mb-4">Projetos</h2>
           <p className="text-gray-400 max-w-3xl mx-auto">
             Projetos recentes e representativos do meu trabalho: interfaces acessíveis, performance e atenção ao detalhe. Clique em qualquer cartão para abrir o projeto.
           </p>
