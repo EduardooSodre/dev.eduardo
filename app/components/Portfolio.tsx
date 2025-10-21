@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import {
   SiNextdotjs,
   SiTailwindcss,
@@ -146,6 +146,7 @@ const projects = [
 
 export default function Portfolio() {
   const [currentPage, setCurrentPage] = useState(1)
+  const portfolioRef = useRef<HTMLElement | null>(null)
   const projectsPerPage = 9
   const totalPages = Math.ceil(projects.length / projectsPerPage)
 
@@ -157,12 +158,20 @@ export default function Portfolio() {
   // Change page
   const goToPage = (pageNumber: number) => {
     setCurrentPage(pageNumber)
-    // scroll portfolio into view so the user is at the top of the list after changing page
-    if (typeof window !== "undefined") {
-      const el = document.getElementById("portfolio")
-      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" })
-    }
   }
+
+  // Scroll into view when page changes (but avoid scrolling on initial mount)
+  const mounted = useRef(false)
+  useEffect(() => {
+    if (!mounted.current) {
+      mounted.current = true
+      return
+    }
+
+    if (portfolioRef.current) {
+      portfolioRef.current.scrollIntoView({ behavior: "smooth", block: "start" })
+    }
+  }, [currentPage])
 
   // Generate page numbers
   const getPageNumbers = () => {
@@ -232,7 +241,7 @@ export default function Portfolio() {
   }
 
   return (
-    <section id="portfolio" className="py-20 bg-neutral-900 text-white px-6 sm:px-10 lg:px-24">
+  <section id="portfolio" ref={portfolioRef} className="py-20 bg-neutral-900 text-white px-6 sm:px-10 lg:px-24">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl sm:text-5xl font-extrabold mb-4">Portfólio — Projetos selecionados</h2>
@@ -254,7 +263,7 @@ export default function Portfolio() {
                 <Image
                   fill
                   sizes="(max-width: 640px) 100vw, 33vw"
-                  src={proj.image || "/projects/placeholder.png"}
+                  src={proj.image || '/projects/placeholder.png'}
                   alt={`Imagem do projeto ${proj.title}`}
                   className="object-cover"
                   loading="lazy"
@@ -272,10 +281,10 @@ export default function Portfolio() {
               </div>
 
               <div className="p-5 flex flex-col flex-1">
-                <div className="">
-                  <h3 className="text-base sm:text-lg font-semibold text-white">{proj.title}</h3>
+                <div>
+                  <h3 className="text-base sm:text-lg md:text-xl font-semibold text-white">{proj.title}</h3>
                 </div>
-                <p className="text-gray-300 text-sm md:text-base mt-2 mb-4">{proj.description}</p>
+                <p className="text-sm md:text-base text-gray-300 mt-2 mb-4">{proj.description}</p>
 
                 <div className="flex flex-wrap items-center gap-3 mb-4 text-lg text-gray-400">
                   {proj.tech.map((icon, i) => (
@@ -283,18 +292,20 @@ export default function Portfolio() {
                   ))}
                 </div>
 
-                <div className="flex items-center justify-between mt-auto">
-                  <Link
-                    href={proj.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-gradient-to-r from-sky-500 to-emerald-400 text-white px-4 py-2 rounded-full text-sm shadow"
-                  >
-                    Ver projeto
-                    <FiExternalLink />
-                  </Link>
+                <div className="mt-auto">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                    <Link
+                      href={proj.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex w-full sm:w-auto justify-center items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-md text-sm shadow-sm transition-colors"
+                    >
+                      Ver projeto
+                      <FiExternalLink />
+                    </Link>
 
-                  <span className="text-xs text-gray-400">Ao vivo</span>
+                    <span className="text-xs text-gray-400 hidden sm:inline">Ao vivo</span>
+                  </div>
                 </div>
               </div>
             </article>

@@ -18,30 +18,31 @@ const Home = () => {
       <HomePage />
 
       {/* Pagina de Serviços */}
-      <section
-        id="Services"
-        className="services flex px-40 flex-col items-center py-10 justify-center w-full ">
-        <Services />
+      <section id="Services" className="w-full py-12">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <Services />
+        </div>
       </section>
 
       {/* Sobre mim */}
-      <section
-        id="About-me"
-        className="about-me w-full px-40 flex flex-col items-center py-10 ">
-        <AboutMe />
-
-      </section >
+      <section id="About-me" className="w-full py-12">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <AboutMe />
+        </div>
+      </section>
 
       {/* Meus projetos */}
-      <div className="portfolio w-full px-6 sm:px-10 lg:px-40 py-10">
-        <Carrossel />
+      <div className="w-full py-12">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <Carrossel />
+        </div>
       </div>
 
       {/* Formulário */}
-      <section
-        id="Contact-me"
-        className="px-40 contact-me flex flex-col items-center py-10 ">
-        <Forms />
+      <section id="Contact-me" className="w-full py-12">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <Forms />
+        </div>
       </section>
 
       {/* Rodapé */}

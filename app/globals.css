@@ -7,8 +7,10 @@ html {
 }
 
 body {
-  font-family: "Roboto", serif;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @layer utilities {
@@ -78,8 +80,8 @@ body {
   width: 100%;
   height: auto;
   border-radius: 0.25rem;
-  border: 2px solid rgb(255, 255, 255, 0.5);
-  transition: 2s;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: box-shadow 200ms ease, transform 200ms ease;
 }
 
 @layer base {
@@ -104,91 +106,23 @@ body {
 }
 
 @media (max-width: 517px) {
-  .services {
-    margin-left: 0%;
-    margin-right: 0%;
-    padding-left: 5%;
-    padding-right: 5%;
-  }
+  /* Component-level responsive rules moved to Tailwind classes inside components */
+}
 
-  .services p {
-    padding: 0%;
-    text-align: center;
-    font-size: 15px;
-  }
-
-  .about-me,
-  .text {
-    width: 100%;
-    padding: 5%;
-    margin: 0%;
-  }
-  .about-me p {
-    display: flex;
-    font-size: 15px;
-  }
-
-  .about-me h2 {
-    text-align: center;
-  }
-  .div {
-    width: 100%;
-  }
-
-  .imagem {
-    display: none;
-  }
-
-  #Forms {
-    margin: 0%;
-    padding: 0;
-  }
-  .contact-me {
-    width: 100%;
-    padding: 5%;
-    margin: 0%;
-  }
-
-  .contact-me p {
-    display: flex;
-    font-size: 15px;
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
 @media (max-width: 795px) {
-  .link {
-    width: 100%;
-    font-size: 15px;
-  }
-
-  .portfolio {
-    width: 100%;
-    padding: 0%;
-    margin: 0%;
-  }
-  .perfil {
-    display: none;
-  }
-
-  .social,
-  p,
-  h2,
-  h1 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .buttonhome {
-    width: 100%;
-    margin-left: 0%;
-    margin-right: 0%;
-    margin-bottom: 0.5rem;
-  }
+  /* moved component-specific styles to Tailwind in components */
 }
 
 @media (max-width: 920px) {
-  .portfolio {
-    width: 100%;
-    padding: 10%;
-  }
+  /* moved component-specific styles to Tailwind in components */
 }
