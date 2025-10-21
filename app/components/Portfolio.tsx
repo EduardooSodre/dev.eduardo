@@ -40,7 +40,7 @@ const projects = [
   },
   {
     title: "Autyro",
-    description: "Portal e painel administrativo para listagem de veículos (marketplace automotivo).",
+    description: "Saas - Portal e painel administrativo para listagem de veículos (marketplace automotivo).",
     tech: [<SiNextdotjs key="next-autyro" />, <SiSass key="sass-autyro" />],
     link: "https://autyro.vercel.app",
     image: "/projects/autyro.png",
@@ -54,7 +54,7 @@ const projects = [
   },
   {
     title: "A Rafa Criou",
-    description: "Loja/portfólio criativo com foco em produtos infantis e artes digitais.",
+    description: "Loja e-commerce de venda de artes digitais em pdf.",
     tech: [<SiNextdotjs key="next-rafa" />, <SiTailwindcss key="tailwind-rafa" />],
     link: "https://a-rafa-criou.vercel.app",
     image: "/projects/a-rafa-criou.png",
@@ -304,7 +304,10 @@ export default function Portfolio() {
                       <FiExternalLink />
                     </Link>
 
-                    <span className="text-xs text-gray-400 hidden sm:inline">Ao vivo</span>
+                    {/* Show development status for specific projects */}
+                    <span className="text-xs text-gray-400 hidden sm:inline">
+                      {['Zarife', 'A Rafa Criou', 'A Vision'].includes(proj.title) ? 'Desenvolvimento' : 'Ao vivo'}
+                    </span>
                   </div>
                 </div>
               </div>
