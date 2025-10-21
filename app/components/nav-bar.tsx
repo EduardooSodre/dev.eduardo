@@ -51,27 +51,27 @@ export default function Navbar() {
       </div>
 
       {/* Mobile menu */}
-        {open && (
-          <div className="md:hidden bg-neutral-900 px-6 pb-6">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="block py-3 text-base border-b border-neutral-700 hover:text-emerald-300 transition-colors"
-                onClick={() => setOpen(false)}
-              >
-                {item.label}
-              </Link>
-            ))}
-            <a
-              href="#Contact-me"
-              className="block mt-4 px-4 py-3 rounded bg-emerald-500 hover:bg-emerald-600 text-center text-base text-white font-semibold"
+      {open && (
+        <div className="md:hidden bg-neutral-900 px-6 pb-6">
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="block py-3 text-base border-b border-neutral-700 hover:text-emerald-300 transition-colors"
               onClick={() => setOpen(false)}
             >
-              Fale comigo
-            </a>
-          </div>
-        )}
+              {item.label}
+            </Link>
+          ))}
+          <a
+            href="#Contact-me"
+            className="block mt-4 px-4 py-3 rounded bg-emerald-500 hover:bg-emerald-600 text-center text-base text-white font-semibold"
+            onClick={() => setOpen(false)}
+          >
+            Fale comigo
+          </a>
+        </div>
+      )}
     </header>
   );
 }

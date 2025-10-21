@@ -241,7 +241,7 @@ export default function Portfolio() {
   }
 
   return (
-  <section id="portfolio" ref={portfolioRef} className="py-20 bg-neutral-900 text-white px-6 sm:px-10 lg:px-24">
+    <section id="portfolio" ref={portfolioRef} className="py-20 bg-neutral-900 text-white px-6 sm:px-10 lg:px-24">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl sm:text-5xl font-extrabold mb-4">Portfólio — Projetos selecionados</h2>
