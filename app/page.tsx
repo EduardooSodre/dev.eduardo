@@ -33,11 +33,9 @@ const Home = () => {
       </section >
 
       {/* Meus projetos */}
-      <section
-        id="Portfolio"
-        className="portfolio px-40 flex flex-col items-center py-10 ">
+      <div className="portfolio w-full px-6 sm:px-10 lg:px-40 py-10">
         <Carrossel />
-      </section>
+      </div>
 
       {/* Formulário */}
       <section

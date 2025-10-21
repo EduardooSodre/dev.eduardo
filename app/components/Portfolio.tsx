@@ -139,43 +139,7 @@ const projects = [
     link: "https://capputeeno-opal.vercel.app",
     image: "/Capputeeno.png",
   },
-
-  // New projects added per request
-  {
-    title: "Aquanize",
-    description: "Sistema de gestão para piscineiros — site institucional com visual premium.",
-    tech: [<SiNextdotjs key="next-aquanize" />, <SiTailwindcss key="tailwind-aquanize" />],
-    link: "https://aquanize.com.br",
-    image: "/projects/aquanize.png",
-  },
-  {
-    title: "Autyro",
-    description: "Portal e painel administrativo para listagem de veículos (marketplace automotivo).",
-    tech: [<SiNextdotjs key="next-autyro" />, <SiSass key="sass-autyro" />],
-    link: "https://autyro.vercel.app",
-    image: "/projects/autyro.png",
-  },
-  {
-    title: "CompanyClean Piscinas",
-    description: "Site institucional para serviços de limpeza e manutenção de piscinas.",
-    tech: [<SiNextdotjs key="next-clean" />, <SiTailwindcss key="tailwind-clean" />],
-    link: "https://www.companycleanpiscinas.com.br",
-    image: "/projects/companyclean.png",
-  },
-  {
-    title: "A Rafa Criou",
-    description: "Loja/portfólio criativo com foco em produtos infantis e artes digitais.",
-    tech: [<SiNextdotjs key="next-rafa" />, <SiTailwindcss key="tailwind-rafa" />],
-    link: "https://a-rafa-criou.vercel.app",
-    image: "/projects/a-rafa-criou.png",
-  },
-  {
-    title: "Zarife",
-    description: "Loja de moda com layout elegante e foco em experiência visual.",
-    tech: [<SiNextdotjs key="next-zarife" />, <SiCss3 key="css-zarife" />],
-    link: "https://zarife.vercel.app",
-    image: "/projects/zarife.png",
-  },
+  
 
 
 ]
@@ -193,7 +157,11 @@ export default function Portfolio() {
   // Change page
   const goToPage = (pageNumber: number) => {
     setCurrentPage(pageNumber)
-    // Remove the scrolling behavior to keep the page position static
+    // scroll portfolio into view so the user is at the top of the list after changing page
+    if (typeof window !== "undefined") {
+      const el = document.getElementById("portfolio")
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" })
+    }
   }
 
   // Generate page numbers
@@ -304,11 +272,10 @@ export default function Portfolio() {
               </div>
 
               <div className="p-5 flex flex-col flex-1">
-                <div className="flex items-start justify-between">
-                  <h3 className="text-lg font-semibold text-white">{proj.title}</h3>
-                  <span className="text-xs text-gray-300">{idx + 1}</span>
+                <div className="">
+                  <h3 className="text-base sm:text-lg font-semibold text-white">{proj.title}</h3>
                 </div>
-                <p className="text-gray-300 text-sm mt-2 mb-4">{proj.description}</p>
+                <p className="text-gray-300 text-sm md:text-base mt-2 mb-4">{proj.description}</p>
 
                 <div className="flex flex-wrap items-center gap-3 mb-4 text-lg text-gray-400">
                   {proj.tech.map((icon, i) => (
