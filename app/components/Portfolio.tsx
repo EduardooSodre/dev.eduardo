@@ -16,6 +16,7 @@ import {
   SiClerk,
   SiGoogleauthenticator,
 } from "react-icons/si"
+import { FiExternalLink } from "react-icons/fi"
 import Link from "next/link"
 import Image from "next/image"
 import {
@@ -29,6 +30,44 @@ import {
 } from "@/components/ui/pagination"
 
 const projects = [
+  // featured / newly requested projects first
+  {
+    title: "Aquanize",
+    description: "Sistema de gestão para piscineiros — site institucional com visual premium.",
+    tech: [<SiNextdotjs key="next-aquanize" />, <SiTailwindcss key="tailwind-aquanize" />],
+    link: "https://aquanize.com.br",
+    image: "/projects/aquanize.png",
+  },
+  {
+    title: "Autyro",
+    description: "Portal e painel administrativo para listagem de veículos (marketplace automotivo).",
+    tech: [<SiNextdotjs key="next-autyro" />, <SiSass key="sass-autyro" />],
+    link: "https://autyro.vercel.app",
+    image: "/projects/autyro.png",
+  },
+  {
+    title: "CompanyClean Piscinas",
+    description: "Site institucional para serviços de limpeza e manutenção de piscinas.",
+    tech: [<SiNextdotjs key="next-clean" />, <SiTailwindcss key="tailwind-clean" />],
+    link: "https://www.companycleanpiscinas.com.br",
+    image: "/projects/companyclean.png",
+  },
+  {
+    title: "A Rafa Criou",
+    description: "Loja/portfólio criativo com foco em produtos infantis e artes digitais.",
+    tech: [<SiNextdotjs key="next-rafa" />, <SiTailwindcss key="tailwind-rafa" />],
+    link: "https://a-rafa-criou.vercel.app",
+    image: "/projects/a-rafa-criou.png",
+  },
+  {
+    title: "Zarife",
+    description: "Loja de moda com layout elegante e foco em experiência visual.",
+    tech: [<SiNextdotjs key="next-zarife" />, <SiCss3 key="css-zarife" />],
+    link: "https://zarife.vercel.app",
+    image: "/projects/zarife.png",
+  },
+
+  // other projects
   {
     title: "Pet Shop Dev",
     description: "Site de petshop com design responsivo, animações.",
@@ -101,12 +140,49 @@ const projects = [
     image: "/Capputeeno.png",
   },
 
+  // New projects added per request
+  {
+    title: "Aquanize",
+    description: "Sistema de gestão para piscineiros — site institucional com visual premium.",
+    tech: [<SiNextdotjs key="next-aquanize" />, <SiTailwindcss key="tailwind-aquanize" />],
+    link: "https://aquanize.com.br",
+    image: "/projects/aquanize.png",
+  },
+  {
+    title: "Autyro",
+    description: "Portal e painel administrativo para listagem de veículos (marketplace automotivo).",
+    tech: [<SiNextdotjs key="next-autyro" />, <SiSass key="sass-autyro" />],
+    link: "https://autyro.vercel.app",
+    image: "/projects/autyro.png",
+  },
+  {
+    title: "CompanyClean Piscinas",
+    description: "Site institucional para serviços de limpeza e manutenção de piscinas.",
+    tech: [<SiNextdotjs key="next-clean" />, <SiTailwindcss key="tailwind-clean" />],
+    link: "https://www.companycleanpiscinas.com.br",
+    image: "/projects/companyclean.png",
+  },
+  {
+    title: "A Rafa Criou",
+    description: "Loja/portfólio criativo com foco em produtos infantis e artes digitais.",
+    tech: [<SiNextdotjs key="next-rafa" />, <SiTailwindcss key="tailwind-rafa" />],
+    link: "https://a-rafa-criou.vercel.app",
+    image: "/projects/a-rafa-criou.png",
+  },
+  {
+    title: "Zarife",
+    description: "Loja de moda com layout elegante e foco em experiência visual.",
+    tech: [<SiNextdotjs key="next-zarife" />, <SiCss3 key="css-zarife" />],
+    link: "https://zarife.vercel.app",
+    image: "/projects/zarife.png",
+  },
+
 
 ]
 
 export default function Portfolio() {
   const [currentPage, setCurrentPage] = useState(1)
-  const projectsPerPage = 6
+  const projectsPerPage = 9
   const totalPages = Math.ceil(projects.length / projectsPerPage)
 
   // Get current projects
@@ -128,12 +204,8 @@ export default function Portfolio() {
     pageNumbers.push(
       <PaginationItem key={1}>
         <PaginationLink
-          href="#"
           isActive={currentPage === 1}
-          onClick={(e) => {
-            e.preventDefault()
-            goToPage(1)
-          }}
+          onClick={() => goToPage(1)}
         >
           1
         </PaginationLink>
@@ -156,12 +228,8 @@ export default function Portfolio() {
       pageNumbers.push(
         <PaginationItem key={i}>
           <PaginationLink
-            href="#"
             isActive={currentPage === i}
-            onClick={(e) => {
-              e.preventDefault()
-              goToPage(i)
-            }}
+            onClick={() => goToPage(i)}
           >
             {i}
           </PaginationLink>
@@ -183,12 +251,8 @@ export default function Portfolio() {
       pageNumbers.push(
         <PaginationItem key={totalPages}>
           <PaginationLink
-            href="#"
             isActive={currentPage === totalPages}
-            onClick={(e) => {
-              e.preventDefault()
-              goToPage(totalPages)
-            }}
+            onClick={() => goToPage(totalPages)}
           >
             {totalPages}
           </PaginationLink>
@@ -202,41 +266,71 @@ export default function Portfolio() {
   return (
     <section id="portfolio" className="py-20 bg-neutral-900 text-white px-6 sm:px-10 lg:px-24">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold mb-6 text-center">Portfólio</h2>
-        <p className="text-gray-400 mb-12 text-center max-w-2xl mx-auto">
-          Alguns dos projetos que desenvolvi com foco em performance, usabilidade e boas práticas de código.
-        </p>
+        <div className="text-center mb-12">
+          <h2 className="text-4xl sm:text-5xl font-extrabold mb-4">Portfólio — Projetos selecionados</h2>
+          <p className="text-gray-400 max-w-3xl mx-auto">
+            Projetos recentes e representativos do meu trabalho: interfaces acessíveis, performance e atenção ao detalhe. Clique em qualquer cartão para abrir o projeto.
+          </p>
+        </div>
 
-        <div
-
-          className="grid gap-10 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {currentProjects.map((proj, idx) => (
-            <div
-              data-aos="flip-left"
+            <article
+              data-aos="zoom-in"
+              data-aos-duration="700"
+              data-aos-once="true"
               key={idx}
-              className="bg-neutral-800 rounded-lg shadow-md hover:shadow-xl transition duration-300 overflow-hidden"
+              className="group bg-neutral-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl motion-safe:transform hover:motion-safe:-translate-y-1 transition duration-300 flex flex-col h-full"
             >
-              <Image
-                width={500}
-                height={500}
-                src={proj.image || "/placeholder.svg"}
-                alt={`Imagem do projeto ${proj.title}`}
-                className="w-full object-cover"
-                loading="lazy"
-              />
-              <div className="p-5">
-                <h3 className="text-xl font-semibold text-green-400 mb-2">{proj.title}</h3>
-                <p className="text-gray-300 text-sm mb-4">{proj.description}</p>
-                <div className="flex items-center gap-3 text-lg text-gray-400 mb-4">
+              <div className="relative h-48 sm:h-56 w-full bg-neutral-700 flex-shrink-0">
+                <Image
+                  fill
+                  sizes="(max-width: 640px) 100vw, 33vw"
+                  src={proj.image || "/projects/placeholder.png"}
+                  alt={`Imagem do projeto ${proj.title}`}
+                  className="object-cover"
+                  loading="lazy"
+                />
+                <a
+                  href={proj.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Abrir ${proj.title} em nova aba`}
+                  className="absolute top-3 right-3 inline-flex items-center gap-2 bg-black/50 text-white text-sm rounded-full px-3 py-1 opacity-90 hover:opacity-100"
+                >
+                  Abrir
+                  <FiExternalLink />
+                </a>
+              </div>
+
+              <div className="p-5 flex flex-col flex-1">
+                <div className="flex items-start justify-between">
+                  <h3 className="text-lg font-semibold text-white">{proj.title}</h3>
+                  <span className="text-xs text-gray-300">{idx + 1}</span>
+                </div>
+                <p className="text-gray-300 text-sm mt-2 mb-4">{proj.description}</p>
+
+                <div className="flex flex-wrap items-center gap-3 mb-4 text-lg text-gray-400">
                   {proj.tech.map((icon, i) => (
-                    <span key={i}>{icon}</span>
+                    <span key={i} className="opacity-90">{icon}</span>
                   ))}
                 </div>
-                <Link href={proj.link} target="_blank" rel="noopener noreferrer" className="text-sm text-green-500 hover:underline">
-                  Ver projeto ↗
-                </Link>
+
+                <div className="flex items-center justify-between mt-auto">
+                  <Link
+                    href={proj.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-gradient-to-r from-sky-500 to-emerald-400 text-white px-4 py-2 rounded-full text-sm shadow"
+                  >
+                    Ver projeto
+                    <FiExternalLink />
+                  </Link>
+
+                  <span className="text-xs text-gray-400">Ao vivo</span>
+                </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
 
@@ -246,9 +340,7 @@ export default function Portfolio() {
             <PaginationContent>
               <PaginationItem>
                 <PaginationPrevious
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault()
+                  onClick={() => {
                     if (currentPage > 1) goToPage(currentPage - 1)
                   }}
                   className={currentPage === 1 ? "pointer-events-none opacity-50" : ""}
@@ -259,9 +351,7 @@ export default function Portfolio() {
 
               <PaginationItem>
                 <PaginationNext
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault()
+                  onClick={() => {
                     if (currentPage < totalPages) goToPage(currentPage + 1)
                   }}
                   className={currentPage === totalPages ? "pointer-events-none opacity-50" : ""}
