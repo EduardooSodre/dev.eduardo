@@ -97,6 +97,25 @@ body {
   }
 }
 
+/* Card shine effect for subtle polish */
+@layer components {
+  .card-tilt {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
+  .card-tilt .card-shine {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.04), transparent);
+    transform: translateX(-120%);
+    transition: transform 550ms cubic-bezier(.22,.98,.41,1);
+    pointer-events: none;
+  }
+  .card-tilt:hover .card-shine {
+    transform: translateX(120%);
+  }
+}
+
 @layer base {
   * {
     @apply border-border;

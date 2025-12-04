@@ -15,10 +15,27 @@ import {
   SiStripe,
   SiClerk,
   SiGoogleauthenticator,
+  SiCloudflare,
+  SiGoogletranslate,
+  SiAuth0,
+  SiPaypal,
+  SiMercadopago,
+  SiPix,
+  SiRedis,
+  SiPostgresql,
+  SiTypescript,
 } from "react-icons/si"
 import { FiExternalLink } from "react-icons/fi"
+import { TbBrandCloudflare } from "react-icons/tb"
+import { MdEmail } from "react-icons/md"
 import Link from "next/link"
 import Image from "next/image"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
 import {
   Pagination,
   PaginationContent,
@@ -32,95 +49,171 @@ import {
 const projects = [
   // featured / newly requested projects first
   {
-    title: "Aquanize",
-    description: "Sistema de gestão para piscineiros — site institucional com visual premium.",
-    tech: [<SiNextdotjs key="next-aquanize" />, <SiTailwindcss key="tailwind-aquanize" />],
-    link: "https://aquanize.com.br",
-    image: "/projects/aquanize.png",
-  },
-  {
-    title: "Autyro",
-    description: "Saas - Portal e painel administrativo para listagem de veículos (marketplace automotivo).",
-    tech: [<SiNextdotjs key="next-autyro" />, <SiSass key="sass-autyro" />],
-    link: "https://autyro.vercel.app",
-    image: "/projects/autyro.png",
-  },
-  {
-    title: "CompanyClean Piscinas",
-    description: "Site institucional para serviços de limpeza e manutenção de piscinas.",
-    tech: [<SiNextdotjs key="next-clean" />, <SiTailwindcss key="tailwind-clean" />],
-    link: "https://www.companycleanpiscinas.com.br",
-    image: "/projects/companyclean.png",
-  },
-  {
     title: "A Rafa Criou",
     description: "Loja e-commerce de venda de artes digitais em pdf.",
-    tech: [<SiNextdotjs key="next-rafa" />, <SiTailwindcss key="tailwind-rafa" />],
-    link: "https://a-rafa-criou.vercel.app",
+    tech: [
+      { icon: <SiNextdotjs key="next-rafa" />, name: "Next.js" },
+      { icon: <SiTypescript key="typescript-rafa" />, name: "TypeScript" },
+      { icon: <SiTailwindcss key="tailwind-rafa" />, name: "Tailwind CSS" },
+      { icon: <SiShadcnui key="Shadcnui" />, name: "Shadcn UI" },
+      { icon: <SiAuth0 key="auth" />, name: "AUTH_SECRET" },
+      { icon: <SiPostgresql key="neon" />, name: "Neon" },
+      { icon: <SiCloudflare key="cloudinary" />, name: "Cloudinary" },
+      { icon: <TbBrandCloudflare key="r2" />, name: "Cloudflare R2" },
+      { icon: <SiGoogletranslate key="google" />, name: "Google" },
+      { icon: <SiGoogletranslate key="deepl" />, name: "DeepL" },
+      { icon: <SiRedis key="upstash" />, name: "Upstash Redis" },
+      { icon: <MdEmail key="onesignal" />, name: "OneSignal" },
+      { icon: <SiStripe key="stripe" />, name: "Stripe" },
+      { icon: <SiPaypal key="paypal" />, name: "PayPal" },
+      { icon: <SiMercadopago key="mercadopago" />, name: "Mercado Pago" },
+      { icon: <SiPix key="pix" />, name: "Pix" },
+    ],
+    link: "https://arafacriou.com.br/",
     image: "/projects/a-rafa-criou.png",
   },
   {
     title: "Zarife",
     description: "Loja de moda com layout elegante e foco em experiência visual.",
-    tech: [<SiNextdotjs key="next-zarife" />, <SiCss3 key="css-zarife" />],
+    tech: [
+      { icon: <SiNextdotjs key="next-zarife" />, name: "Next.js" },
+      { icon: <SiTypescript key="typescript-zarife" />, name: "TypeScript" },
+      { icon: <SiTailwindcss key="tailwind-zarife" />, name: "Tailwind CSS" },
+      { icon: <SiShadcnui key="Shadcnui" />, name: "Shadcn UI" },
+      { icon: <SiPostgresql key="neon" />, name: "Neon" },
+      { icon: <SiCloudflare key="cloudinary" />, name: "Cloudinary" },
+      { icon: <SiClerk key="clerk" />, name: "Clerk" },
+      { icon: <SiStripe key="stripe" />, name: "Stripe" },
+      { icon: <SiPaypal key="paypal" />, name: "PayPal" },
+    ],
     link: "https://zarife.vercel.app",
     image: "/projects/zarife.png",
+  },
+  {
+    title: "Autyro",
+    description: "Saas - Portal e painel administrativo para listagem de veículos (marketplace automotivo).",
+    tech: [
+      { icon: <SiNextdotjs key="next-autyro" />, name: "Next.js" },
+      { icon: <SiTypescript key="typescript-autyro" />, name: "TypeScript" },
+      { icon: <SiTailwindcss key="tailwind-autyro" />, name: "Tailwind CSS" },
+      { icon: <SiShadcnui key="Shadcnui" />, name: "Shadcn UI" },
+      { icon: <SiClerk key="clerk" />, name: "Clerk" },
+      { icon: <SiPostgresql key="neon" />, name: "Neon" },
+      { icon: <SiCloudflare key="cloudinary" />, name: "Cloudinary" },
+      { icon: <SiOpenai key="openAi" />, name: "OpenAI" },
+      { icon: <SiStripe key="stripe" />, name: "Stripe" },
+
+    ],
+    link: "https://autyro.vercel.app",
+    image: "/projects/autyro.png",
+  },
+  {
+    title: "Aquanize",
+    description: "Sistema de gestão para piscineiros — site institucional com visual premium.",
+    tech: [
+      { icon: <SiNextdotjs key="next-aquanize" />, name: "Next.js" },
+      { icon: <SiTailwindcss key="tailwind-aquanize" />, name: "Tailwind CSS" },
+    ],
+    link: "https://aquanize.com.br",
+    image: "/projects/aquanize.png",
+  },
+  {
+    title: "CompanyClean Piscinas",
+    description: "Site institucional para serviços de limpeza e manutenção de piscinas.",
+    tech: [
+      { icon: <SiNextdotjs key="next-clean" />, name: "Next.js" },
+      { icon: <SiTailwindcss key="tailwind-clean" />, name: "Tailwind CSS" },
+      { icon: <SiShadcnui key="Shadcnui" />, name: "Shadcn UI" },
+      { icon: <SiCloudflare key="cloudinary" />, name: "Cloudinary" },
+    ],
+    link: "https://www.companycleanpiscinas.com.br",
+    image: "/projects/companyclean.png",
   },
 
   // other projects
   {
     title: "Pet Shop Dev",
     description: "Site de petshop com design responsivo, animações.",
-    tech: [<SiNextdotjs key="next" />, <SiTailwindcss key="tailwind" />],
+    tech: [
+      { icon: <SiNextdotjs key="next" />, name: "Next.js" },
+      { icon: <SiTailwindcss key="tailwind" />, name: "Tailwind CSS" },
+    ],
     link: "https://petshop-rho-olive.vercel.app",
     image: "/petshop.png",
   },
   {
     title: "Finance Growth",
     description: "Aplicativo de finanças pessoais com autenticação, dashboard e gráficos interativos.",
-    tech: [<SiNextdotjs key="next" />, <SiTailwindcss key="tailwind" />, <SiOpenai key="openAi" />, <SiShadcnui key="Shadcnui" />, <SiStripe key="stripe" />, <SiClerk key="clerk" />],
+    tech: [
+      { icon: <SiNextdotjs key="next" />, name: "Next.js" },
+      { icon: <SiTailwindcss key="tailwind" />, name: "Tailwind CSS" },
+      { icon: <SiOpenai key="openAi" />, name: "OpenAI" },
+      { icon: <SiShadcnui key="Shadcnui" />, name: "Shadcn UI" },
+      { icon: <SiStripe key="stripe" />, name: "Stripe" },
+      { icon: <SiClerk key="clerk" />, name: "Clerk" },
+    ],
     link: "https://finance-growth.vercel.app",
     image: "/FinanceFlow.png",
   },
   {
     title: "Task Hub",
     description: "Meu site que permite que você anote e organize suas tarefas de forma eficiente, sejam elas públicas ou privadas.",
-    tech: [<SiNextdotjs key="next" />, <SiCss3 key="CssModules" />, <SiGoogleauthenticator key="AuthGoogle" />],
+    tech: [
+      { icon: <SiNextdotjs key="next" />, name: "Next.js" },
+      { icon: <SiCss3 key="CssModules" />, name: "CSS Modules" },
+      { icon: <SiGoogleauthenticator key="AuthGoogle" />, name: "Google Auth" },
+    ],
     link: "https://task-hub-phi.vercel.app",
     image: "/TaskHub.png",
   },
   {
     title: "A Vision",
     description: "Site de uma empresa de tecnologia com design responsivo.",
-    tech: [<SiAngular key="angular" />, <SiCss3 key="css3" />],
+    tech: [
+      { icon: <SiAngular key="angular" />, name: "Angular" },
+      { icon: <SiCss3 key="css3" />, name: "CSS3" },
+    ],
     link: "#",
     image: "/A-Vision.png",
   },
   {
     title: "Motors Dev",
     description: "E-commerce de veículos com CRUD de anúncios integrado a um CMS.",
-    tech: [<SiNextdotjs key="next" />, <SiSass key="sass" />],
+    tech: [
+      { icon: <SiNextdotjs key="next" />, name: "Next.js" },
+      { icon: <SiSass key="sass" />, name: "Sass" },
+    ],
     link: "https://motorsdev.vercel.app",
     image: "/motors-dev.png",
   },
   {
     title: "Repositório Git",
     description: "Repositório Git onde pode colocar seu repositório e ver informações sobre o Git e GitHub.",
-    tech: [<SiJavascript key="js" />],
+    tech: [
+      { icon: <SiJavascript key="js" />, name: "JavaScript" },
+    ],
     link: "https://repositorio-github-mu.vercel.app",
     image: "/repositorio-git.png",
   },
   {
     title: "Jogo do Número Secreto",
     description: "Jogo simples de adivinhação de número, desenvolvido com HTML, CSS e JavaScript.",
-    tech: [<SiHtml5 key="html" />, <SiCss3 key="css" />, <SiJavascript key="js" />],
+    tech: [
+      { icon: <SiHtml5 key="html" />, name: "HTML5" },
+      { icon: <SiCss3 key="css" />, name: "CSS3" },
+      { icon: <SiJavascript key="js" />, name: "JavaScript" },
+    ],
     link: "https://jogo-do-mumero-secreto.vercel.app",
     image: "/jogo-numero-secreto.png",
   },
   {
     title: "AluraBooks",
     description: "Site de livros com design responsivo, animações.",
-    tech: [<SiNextdotjs key="next" />, <SiNodedotjs key="node" />, <SiTailwindcss key="tailwind" />],
+    tech: [
+      { icon: <SiNextdotjs key="next" />, name: "Next.js" },
+      { icon: <SiNodedotjs key="node" />, name: "Node.js" },
+      { icon: <SiTailwindcss key="tailwind" />, name: "Tailwind CSS" },
+    ],
     link: "https://alurabook-three-gamma.vercel.app",
     image: "/AluraBooks.png",
   },
@@ -128,14 +221,20 @@ const projects = [
     title: "Aluraplus",
     description:
       "Site desenvolvido no curso da Alura",
-    tech: [<SiNextdotjs key="next" />, <SiTailwindcss key="tailwind" />],
+    tech: [
+      { icon: <SiNextdotjs key="next" />, name: "Next.js" },
+      { icon: <SiTailwindcss key="tailwind" />, name: "Tailwind CSS" },
+    ],
     link: "https://dev-eduardo-phi.vercel.app",
     image: "/Combo+Alura.png",
   },
   {
     title: "Site loja de roupas",
     description: "Site de loja de roupas web.",
-    tech: [<SiNextdotjs key="next" />, <SiCss3 key="css3" />],
+    tech: [
+      { icon: <SiNextdotjs key="next" />, name: "Next.js" },
+      { icon: <SiCss3 key="css3" />, name: "CSS3" },
+    ],
     link: "https://capputeeno-opal.vercel.app",
     image: "/Capputeeno.png",
   },
@@ -255,9 +354,10 @@ export default function Portfolio() {
             <article
               data-aos="zoom-in"
               data-aos-duration="700"
+              data-aos-delay={(idx % projectsPerPage) * 80}
               data-aos-once="true"
               key={idx}
-              className="group bg-neutral-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl motion-safe:transform hover:motion-safe:-translate-y-1 transition duration-300 flex flex-col h-full"
+              className="group card-tilt relative bg-gradient-to-br from-neutral-900/60 to-neutral-800/60 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-transform transform-gpu hover:-translate-y-3 hover:scale-[1.02] motion-safe:duration-500 flex flex-col h-full"
             >
               <div className="relative h-48 sm:h-56 w-full bg-neutral-700 flex-shrink-0">
                 <Image
@@ -268,6 +368,11 @@ export default function Portfolio() {
                   className="object-cover"
                   loading="lazy"
                 />
+                {/* Soft gradient overlay for depth and to handle transparent images */}
+                <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/30 to-transparent mix-blend-overlay" />
+                <div className="card-shine absolute inset-0 pointer-events-none" />
+                {/* Card accent dot */}
+                <div className="absolute bottom-3 left-3 w-10 h-4 rounded-full opacity-90 bg-gradient-to-r from-emerald-400 to-cyan-400" />
                 <a
                   href={proj.link}
                   target="_blank"
@@ -286,11 +391,20 @@ export default function Portfolio() {
                 </div>
                 <p className="text-sm md:text-base text-gray-300 mt-2 mb-4">{proj.description}</p>
 
-                <div className="flex flex-wrap items-center gap-3 mb-4 text-lg text-gray-400">
-                  {proj.tech.map((icon, i) => (
-                    <span key={i} className="opacity-90">{icon}</span>
-                  ))}
-                </div>
+                <TooltipProvider>
+                  <div className="flex flex-wrap items-center gap-3 mb-4 text-lg text-gray-400">
+                    {proj.tech.map((tech, i) => (
+                      <Tooltip key={i}>
+                        <TooltipTrigger asChild>
+                          <span className="opacity-90 cursor-help">{tech.icon}</span>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>{tech.name}</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    ))}
+                  </div>
+                </TooltipProvider>
 
                 <div className="mt-auto">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
@@ -298,15 +412,15 @@ export default function Portfolio() {
                       href={proj.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex w-full sm:w-auto justify-center items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-md text-sm shadow-sm transition-colors"
+                      className="inline-flex w-full sm:w-auto justify-center items-center gap-2 bg-gradient-to-r from-emerald-400 to-cyan-500 hover:from-emerald-500 hover:to-cyan-600 text-white px-4 py-2 rounded-md text-sm shadow-md transition-all duration-300 transform-gpu hover:-translate-y-1"
                     >
                       Ver projeto
-                      <FiExternalLink />
+                      <FiExternalLink className="ml-1 transition-transform group-hover:translate-x-1" />
                     </Link>
 
                     {/* Show development status for specific projects */}
                     <span className="text-xs text-gray-400 hidden sm:inline">
-                      {['Zarife', 'A Rafa Criou', 'A Vision'].includes(proj.title) ? 'Desenvolvimento' : 'Ao vivo'}
+                      {['Zarife', 'A Vision'].includes(proj.title) ? 'Desenvolvimento' : 'Ao vivo'}
                     </span>
                   </div>
                 </div>

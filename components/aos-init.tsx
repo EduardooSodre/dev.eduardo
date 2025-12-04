@@ -8,10 +8,12 @@ export function AosInit() {
   useEffect(() => {
     const prefersReduced = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     Aos.init({
-      duration: 500,
+      duration: 700,
       easing: 'ease-out-cubic',
       offset: 120,
       once: true,
+      anchorPlacement: 'top-bottom',
+      delay: 0,
       disable: prefersReduced,
     });
   }, []);
