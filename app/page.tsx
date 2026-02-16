@@ -4,7 +4,7 @@ import Navbar from "./components/nav-bar";
 import Forms from "./components/ui/form";
 import Carrossel from "./components/Portfolio";
 import Services from "./components/Services";
-import AboutMe from "./components/About-me";
+// import AboutMe from "./components/About-me";
 import Footer from "./components/Footer";
 import HomePage from "./components/HomePage";
 
@@ -25,11 +25,11 @@ const Home = () => {
       </section>
 
       {/* Sobre mim */}
-      <section id="About-me" className="w-full py-12">
+      {/* <section id="About-me" className="w-full py-12">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <AboutMe />
         </div>
-      </section>
+      </section> */}
 
       {/* Meus projetos */}
       <div className="w-full py-12">

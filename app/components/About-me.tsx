@@ -6,7 +6,7 @@ export default function AboutMe() {
     return (
         <section
             id="sobre"
-            className="bg-neutral-900 text-white px-6 sm:px-10 md:px-20 lg:px-32 xl:px-40 py-24"
+            className=" text-white px-6 sm:px-10 md:px-20 lg:px-32 xl:px-40 py-24"
         >
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
                 {/* Imagem - escondida no mobile */}

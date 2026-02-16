@@ -93,7 +93,7 @@ body {
     @apply h-full;
   }
   body {
-    @apply h-full bg-background text-foreground;
+    @apply h-full text-foreground;
   }
 }
 
@@ -121,7 +121,7 @@ body {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
   }
 }
 

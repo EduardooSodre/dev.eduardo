@@ -45,7 +45,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contato" className="bg-neutral-900 text-white px-6 sm:px-10 md:px-20 lg:px-32 xl:px-40 py-24">
+    <section id="contato" className=" text-white px-6 sm:px-10 md:px-20 lg:px-32 xl:px-40 py-24">
       <div className="max-w-2xl mx-auto text-center">
         <h2 className="text-3xl font-bold mb-4">Fale comigo</h2>
         <p className="text-gray-400 mb-10">
