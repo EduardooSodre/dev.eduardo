@@ -55,7 +55,7 @@ export default function Services() {
             <div
               data-aos="flip-down"
               key={index}
-              className="bg-neutral-800 p-6 rounded-lg hover:bg-neutral-700 transition duration-300"
+              className="bg-gradient-to-br from-neutral-900/60 to-neutral-800/60 p-6 rounded-lg hover:bg-neutral-700 transition duration-300"
             >
               <div className="mb-4 flex justify-center">{service.icon}</div>
               <h3 className="text-lg font-semibold text-green-400 mb-2">{service.title}</h3>

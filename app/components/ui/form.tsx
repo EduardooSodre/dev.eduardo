@@ -59,7 +59,7 @@ export default function ContactForm() {
             placeholder="Seu nome"
             value={form.nome}
             onChange={handleChange}
-            className="w-full px-4 py-2 rounded bg-neutral-800 border border-gray-700 text-white"
+            className="w-full px-4 py-2 rounded bg-neutral-800/80 border border-gray-700 text-white"
           />
           <input
             type="email"
@@ -67,7 +67,7 @@ export default function ContactForm() {
             placeholder="Seu e-mail"
             value={form.email}
             onChange={handleChange}
-            className="w-full px-4 py-2 rounded bg-neutral-800 border border-gray-700 text-white"
+            className="w-full px-4 py-2 rounded bg-neutral-800/80 border border-gray-700 text-white"
           />
           <input
             type="text"
@@ -75,7 +75,7 @@ export default function ContactForm() {
             placeholder="Seu telefone"
             value={form.telefone}
             onChange={handleChange}
-            className="w-full px-4 py-2 rounded bg-neutral-800 border border-gray-700 text-white"
+            className="w-full px-4 py-2 rounded bg-neutral-800/80 border border-gray-700 text-white"
           />
           <textarea
             name="assunto"
@@ -83,7 +83,7 @@ export default function ContactForm() {
             value={form.assunto}
             onChange={handleChange}
             rows={4}
-            className="w-full px-4 py-2 rounded bg-neutral-800 border border-gray-700 text-white"
+            className="w-full px-4 py-2 rounded bg-neutral-800/80 border border-gray-700 text-white"
           />
           {erro && <p className="text-red-500 text-sm">{erro}</p>}
           {sucesso && <p className="text-green-500 text-sm">Mensagem enviada com sucesso!</p>}
